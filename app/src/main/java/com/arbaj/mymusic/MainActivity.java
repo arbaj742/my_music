@@ -42,11 +42,14 @@ public class MainActivity extends AppCompatActivity {
         {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}
             , REQUEST_CODE);
+
         }
+
         else{
 
             musicFiles=getAllAudio(this);
             initViewpager();
+
         }
     }
     public void onRequestPermissionResult(int requestCode, @NonNull  String[] permission, @NonNull int[] grantResults) {
