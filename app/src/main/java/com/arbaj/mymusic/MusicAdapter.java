@@ -75,7 +75,7 @@ holder.itemView.setOnClickListener(new View.OnClickListener() {
 
     }
 });
-//        holder.menuMore.setOnClickListener(new View.OnClickListener() {
+//    holder.menuMore.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick( final View v) {
 //                PopupMenu popupMenu= new PopupMenu(mContext,v);
@@ -114,6 +114,7 @@ holder.itemView.setOnClickListener(new View.OnClickListener() {
 //            Snackbar.make(v, "File not Deleted", Snackbar.LENGTH_SHORT).show();
 //        }
 //    }
+
 
     @Override
     public int getItemCount() {

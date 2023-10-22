@@ -1,6 +1,8 @@
 package com.arbaj.mymusic;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.media.MediaMetadataRetriever;
 import android.view.LayoutInflater;
@@ -35,7 +37,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.MyHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.album_name.setText(albumFiles.get(position).getAlbum());
 
 
@@ -51,6 +53,15 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.MyHolder> {
                     .load(R.mipmap.ic_launcher)
                     .into(holder.album_image);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mContext,AlbumDetails.class);
+                intent.putExtra("albumName",albumFiles.get(position).getAlbum());
+                mContext.startActivity(intent);
+
+            }
+        });
 
     }
 
