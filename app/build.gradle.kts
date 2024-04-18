@@ -3,6 +3,15 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("release") {
+            storeFile =
+                file("C:\\Users\\acer\\AndroidStudioProjects\\MyMusic\\app\\build\\jks\\music.jks")
+            storePassword = "123456"
+            keyAlias = "key0"
+            keyPassword = "123456"
+        }
+    }
     namespace = "com.arbaj.mymusic"
     compileSdk = 33
 
@@ -18,12 +27,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

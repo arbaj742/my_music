@@ -2,9 +2,11 @@ package com.arbaj.mymusic;
 
 
 
+import static com.arbaj.mymusic.AlbumDetailsAdapter.albumFiles;
 import static com.arbaj.mymusic.MainActivity.musicFiles;
 import static com.arbaj.mymusic.MainActivity.repeatBoolean;
 import static com.arbaj.mymusic.MainActivity.shuffleBoolean;
+import static com.arbaj.mymusic.MusicAdapter.mFiles;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -392,7 +394,15 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
 
     private void getIntenMethod() {
         position=getIntent().getIntExtra("position",-1);
-        listSongs=musicFiles;
+        String sender =getIntent().getStringExtra("sender");
+        if (sender!=null && sender.equals("albumDetails")){
+            listSongs=albumFiles;
+
+        }
+        else {
+            listSongs=mFiles;
+        }
+
         if (listSongs!=null)
         {
             playPauseBtn.setImageResource(R.drawable.ic_pause);

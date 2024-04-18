@@ -35,7 +35,7 @@ import java.util.ArrayList;
 public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyVieHolder> {
 
     private Context mContext;
-    private ArrayList<MusicFiles> mFiles;
+    static ArrayList<MusicFiles> mFiles;
     MusicAdapter(Context mContext,ArrayList<MusicFiles> mFiles)
     {
         this.mFiles = mFiles;
@@ -130,7 +130,7 @@ holder.itemView.setOnClickListener(new View.OnClickListener() {
             super(itemView);
             file_name= itemView.findViewById(R.id.music_file_name);
             album_art=itemView.findViewById(R.id.music_img);
-             menuMore=itemView.findViewById(R.id.menuMore);
+        //     menuMore=itemView.findViewById(R.id.menuMore);
         }
     }
 
@@ -141,7 +141,11 @@ holder.itemView.setOnClickListener(new View.OnClickListener() {
 
         return art;
     }
-
+void  updateList(ArrayList<MusicFiles> musicFilesArrayList){
+        mFiles= new ArrayList<>();
+        mFiles.addAll(musicFilesArrayList);
+        notifyDataSetChanged();
+}
 
     }
 

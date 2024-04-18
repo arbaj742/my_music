@@ -19,7 +19,7 @@ import com.arbaj.mymusic.R.id;
 
 public class Songsfragment extends Fragment {
     RecyclerView recyclerView;
-    MusicAdapter musicAdapter;
+  static   MusicAdapter musicAdapter;
 
 
 

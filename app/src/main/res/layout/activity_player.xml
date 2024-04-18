@@ -54,13 +54,16 @@
             android:src="@mipmap/ic_launcher"
             android:scaleType="centerCrop"
             android:id="@+id/cover_art"/>
+
         <ImageView
+            android:id="@+id/imageViewGradient"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:id="@+id/imageViewGradient"
 
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            />
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="5dp" />
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
